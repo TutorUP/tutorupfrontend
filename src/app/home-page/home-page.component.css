@@ -1,0 +1,42 @@
+.user-card {
+	color: #494949;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+button {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: small;
+}
+
+mat-card-title {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+mat-card-title i {
+	font-size: small;
+}
+
+mat-card-subtitle {
+	font-size: small;
+}
+
+.rating {
+	display: inline-block;
+	color: #494949;
+	margin-bottom: 5px;
+}
+
+mat-divider {
+	color: #e0e0e0;
+}
+
+.filters {
+	margin-top: 25px; 
+}
+
+.search{
+	width: 100%;
+}

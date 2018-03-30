@@ -1,0 +1,22 @@
+mat-toolbar {
+	background: #494949;
+	color: #fff;
+}
+
+i {
+	font-size: 45px;
+	margin-right: 15px;
+}
+
+.title {
+	font-family: "Variex", sans-serif;
+	margin-left: 30px;
+}
+
+.icon {
+  padding: 0 14px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

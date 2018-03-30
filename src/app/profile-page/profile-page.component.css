@@ -1,0 +1,77 @@
+div {
+ font-family: "Arial", "Helvetica", sans-serif;
+ color: #494949;
+}
+
+.tag {
+	display: inline-block;
+	border: 1px solid #494949;
+	padding: 3px 8px;
+	font-size: small;
+	border-radius: 30px;
+}
+
+.rating {
+	display: inline-block;
+	color: #494949;
+}
+
+
+.name {
+	font-size: 30px;
+	font-weight: bold;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.user-image {
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.user-details {
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.subjects {
+	margin: 25px 0;
+}
+
+.subject {
+	margin-right: 10px;
+}
+
+.subject:hover {
+	background: #494949;
+	color: #fff;
+}
+
+.label {
+	font-weight: bold;
+}
+
+.user-info {
+	margin-bottom: 5px;
+}
+
+.reviews {
+	margin: 50px 0 25px 0;
+}
+
+.review-info {
+	font-size: small;
+	margin-bottom: 5px;
+}
+
+.review {
+	margin-top: 20px;
+	border-left: 3px solid #e0e0e0;
+	padding-left: 10px;
+}
+
+.review-button {
+	margin-bottom: 50px;
+}
+
+
