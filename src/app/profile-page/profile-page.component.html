@@ -4,40 +4,39 @@
 
 	<div class="row">
 		<div class="user-image col-sm-3">
-			<img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/p/6/005/09c/26d/0020967.jpg">
+			<img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" height="200" width="200">
 		</div>
 
 		<div class="user-details col-sm-9">
 			<div>
-				<p class="name">Alexa Baldwin</p>
+				<p class="name">{{ name }}</p>
 
-				<p class="rating"><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i></p>
+				<p class="rating"><i class="material-icons">{{ calculateStars() }}</i></p>
 			</div>
 
 			<div>
-				<p class="tag">SARC Certified</p>
-				<p class="tag">Athletics Tutor</p>
-				<p class="tag">Paid</p>
+				<span *ngFor="let tag of tags">
+					<p class="tag">{{ tag }}</p>
+				</span>
 			</div>
 
 			<div>
-				<p class="user-info"><span class="label">Email:</span> baldwina18@up.edu</p>
-				<p class="user-info"><span class="label">Major(s):</span> Computer Science and Mathematics</p>
-				<p class="user-info"><span class="label">Minor(s):</span> None</p>
+				<p class="user-info"><span class="label">Email:</span> {{ email }}</p>
+				<p class="user-info"><span class="label">Major(s):</span> {{ major }}</p>
+				<p class="user-info"><span class="label">Minor(s):</span> {{ minor }}</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="subjects">
-		<button mat-raised-button class="subject">EGR 111</button>
-		<button mat-raised-button class="subject">CS 203</button>
-		<button mat-raised-button class="subject">CS 305</button>
-		<button mat-raised-button class="subject">CS 324</button>
+		<span *ngFor="let subject of subjects">
+			<button mat-raised-button class="subject">{{ subject }}</button>
+		</span>	
 	</div>
 
-	<p class="bio"><span class="label">About Me: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida quam sit amet condimentum hendrerit. Ut ut leo sit amet dui porttitor rhoncus et faucibus diam. Praesent efficitur lorem eu sem vulputate laoreet rutrum volutpat tortor. Nulla in consequat orci. Sed vitae tempus elit. Sed in molestie lectus. Donec in diam laoreet, mattis nisl et, rutrum eros. Vivamus feugiat, lectus quis malesuada sollicitudin, ipsum lectus interdum dui, nec malesuada nisl mi id mauris.</p>
+	<p class="bio"><span class="label">About Me: </span>{{ bio }}</p>
 
-	<p class="availability"><span class="label">Availability: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida quam sit amet condimentum hendrerit. Ut ut leo sit amet dui porttitor rhoncus et faucibus diam. Praesent efficitur lorem eu sem vulputate laoreet rutrum volutpat tortor.</p>
+	<p class="availability"><span class="label">Availability: </span>{{ availability }}</p>
 
 	<div class="reviews">
 		<h5>Reviews</h5>
