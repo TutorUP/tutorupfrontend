@@ -1,17 +1,18 @@
 
+import { Review } from './review';
+
 export class User 
 {
-	public name: string;
-	public email: string;
-	public major: string;
-	public minor: string;
-	public subjects: string[];
-	public bio: string;
-	public availability: string;
-	public tags: string[];
-	public rating: number;
-
-	// public reviews: Review[];
+	name: string;
+	email: string;
+	major: string;
+	minor: string;
+	subjects: string[] = [];
+	bio: string;
+	availability: string;
+	tags: string[] = [];
+	rating: number;
+	reviews: Review[] = [];
 	// how to do image??
 
 	constructor (name: string, email: string, major: string, minor: string, subjects: string[], 

@@ -9,48 +9,44 @@
 
 		<div class="user-details col-sm-9">
 			<div>
-				<p class="name">{{ name }}</p>
+				<p class="name">{{ user.name }}</p>
 
-				<p class="rating"><i class="material-icons">{{ calculateStars() }}</i></p>
+				<p class="rating"><i class="material-icons">{{ calculateStars(user.rating) }}</i></p>
 			</div>
 
 			<div>
-				<span *ngFor="let tag of tags">
+				<span *ngFor="let tag of user.tags">
 					<p class="tag">{{ tag }}</p>
 				</span>
 			</div>
 
 			<div>
-				<p class="user-info"><span class="label">Email:</span> {{ email }}</p>
-				<p class="user-info"><span class="label">Major(s):</span> {{ major }}</p>
-				<p class="user-info"><span class="label">Minor(s):</span> {{ minor }}</p>
+				<p class="user-info"><span class="label">Email:</span> {{ user.email }}</p>
+				<p class="user-info"><span class="label">Major(s):</span> {{ user.major }}</p>
+				<p class="user-info"><span class="label">Minor(s):</span> {{ user.minor }}</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="subjects">
-		<span *ngFor="let subject of subjects">
+		<span *ngFor="let subject of user.subjects">
 			<button mat-raised-button class="subject">{{ subject }}</button>
 		</span>	
 	</div>
 
-	<p class="bio"><span class="label">About Me: </span>{{ bio }}</p>
+	<p class="bio"><span class="label">About Me: </span>{{ user.bio }}</p>
 
-	<p class="availability"><span class="label">Availability: </span>{{ availability }}</p>
+	<p class="availability"><span class="label">Availability: </span>{{ user.availability }}</p>
 
 	<div class="reviews">
 		<h5>Reviews</h5>
 		<mat-divider></mat-divider>
-		<div class="review">
-			<p class="review-info">Amy Smith (11/24/17)</p>
-			<i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
-			<p>Ut ut leo sit amet dui porttitor rhoncus et faucibus diam. Praesent efficitur lorem eu sem vulputate laoreet rutrum volutpat tortor. Vivamus feugiat, lectus quis malesuada sollicitudin, ipsum lectus interdum dui, nec malesuada nisl mi id mauris.</p>
-		</div>
-
-		<div class="review">
-			<p class="review-info">John Buttons (10/5/16)</p>
-			<i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
-			<p>Ut ut leo sit amet dui porttitor rhoncus et faucibus diam. Praesent efficitur lorem eu sem vulputate laoreet rutrum volutpat tortor. Nulla in consequat orci. Sed vitae tempus elit. Sed in molestie lectus. Donec in diam laoreet, mattis nisl et, rutrum eros. Vivamus feugiat, lectus quis malesuada sollicitudin, ipsum lectus interdum dui, nec malesuada nisl mi id mauris.</p>
+		<div *ngFor="let review of user.reviews">
+			<div class="review">
+				<p class="review-info">{{ review.reviewer }} ({{ review.date }})</p>
+				<i class="material-icons">{{ calculateStars(review.rating) }}</i>
+				<p>{{ review.description }}</p>
+			</div>
 		</div>
 	</div>
 
