@@ -8,6 +8,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ResourcesPageComponent } from './resources-page/resources-page.component';
 import { HelpPageComponent } from './help-page/help-page.component';
 import { HeaderComponent } from './header/header.component';
+import { TutorService } from './tutor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -53,6 +54,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { CreateTutorPageComponent } from './create-tutor-page/create-tutor-page.component';
 
 
 @NgModule({
@@ -62,7 +64,8 @@ import {
     ProfilePageComponent,
     HeaderComponent,
     ResourcesPageComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    CreateTutorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -105,7 +108,7 @@ import {
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [TutorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
