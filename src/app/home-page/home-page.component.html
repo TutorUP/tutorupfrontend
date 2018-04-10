@@ -2,21 +2,20 @@
 
 <div class="container">
 
-
 	<div class="filters">
 	  <mat-form-field class="search">
-	    <span matPrefix class="material-icons">search &nbsp;</span>		
-	    <input type="search" matInput placeholder="Search for a Tutor...">
+	    <span matPrefix class="material-icons">search &nbsp;</span>
+		<input [(ngModel)]="searchNameText" matInput placeholder="Search for a Tutor...">
 	  </mat-form-field>
 
 	  <div class="row">
 		  <mat-form-field class="col-sm">
 		    <mat-select placeholder="Major Filter">
-		      <mat-option value="option">Computer Science</mat-option>	
+		      <mat-option value="option">Computer Science</mat-option>
 		      <mat-option value="option">Mathematics</mat-option>
-		      <mat-option value="option">Nursing</mat-option>	
+		      <mat-option value="option">Nursing</mat-option>
 		      <mat-option value="option">Business</mat-option>
-		      <mat-option value="option">Chemistry</mat-option>	
+		      <mat-option value="option">Chemistry</mat-option>
 		      <mat-option value="option">Communications</mat-option>
 		    </mat-select>
 		  </mat-form-field>
@@ -41,12 +40,21 @@
 		    </mat-select>
 		  </mat-form-field>
 		</div>
+
+		<div class="row">
+			<input [(ngModel)]="searchText" placeholder="search text goes here">
+			<ul>
+			  <li *ngFor="let c of filterUsers | filterBy : searchText">
+			    {{c}}
+			  </li>
+			</ul>
+		</div>
 	</div>
 
-	<div *ngFor="let user of users">
+	<div *ngFor="let user of users | filterBy : searchText">
 		<mat-card class="user-card">
 			<mat-card-header>
-				<img mat-card-avatar src="{{ user.imageURL }}">	
+				<img mat-card-avatar src="{{ user.imageURL }}">
 				<mat-card-title>{{ user.name }} <p class="rating"><i class="material-icons">{{ calculateStars(user.rating) }}</i></mat-card-title>
 				<mat-card-subtitle>{{ user.major }}</mat-card-subtitle>
 			</mat-card-header>
@@ -70,7 +78,7 @@
 				</mat-list>
 			</mat-card-content>
 
-			<mat-card-actions>	
+			<mat-card-actions>
 				<button mat-button>view page</button>
 				<button mat-button>rate tutor</button>
 			</mat-card-actions>

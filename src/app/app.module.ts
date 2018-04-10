@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,6 +10,8 @@ import { ResourcesPageComponent } from './resources-page/resources-page.componen
 import { HelpPageComponent } from './help-page/help-page.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FilterPipe } from './filter.pipe';
 
 
 const appRoutes: Routes = [
@@ -62,11 +65,13 @@ import {
     ProfilePageComponent,
     HeaderComponent,
     ResourcesPageComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -108,4 +113,7 @@ import {
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule { }
