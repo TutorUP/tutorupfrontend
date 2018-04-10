@@ -11,7 +11,7 @@
 			<div>
 				<p class="name">{{ user.name }}</p>
 
-				<p class="rating"><i class="material-icons">{{ calculateStars(user.rating) }}</i></p>
+				<p class="rating"><i class="material-icons">{{ tutorService.calculateStars(user.rating) }}</i></p>
 			</div>
 
 			<div>
@@ -44,7 +44,7 @@
 		<div *ngFor="let review of user.reviews">
 			<div class="review">
 				<p class="review-info">{{ review.reviewer }} ({{ review.date }})</p>
-				<i class="material-icons">{{ calculateStars(review.rating) }}</i>
+				<i class="material-icons">{{ tutorService.calculateStars(review.rating) }}</i>
 				<p>{{ review.description }}</p>
 			</div>
 		</div>

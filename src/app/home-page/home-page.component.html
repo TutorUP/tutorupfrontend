@@ -12,32 +12,19 @@
 	  <div class="row">
 		  <mat-form-field class="col-sm">
 		    <mat-select placeholder="Major Filter">
-		      <mat-option value="option">Computer Science</mat-option>	
-		      <mat-option value="option">Mathematics</mat-option>
-		      <mat-option value="option">Nursing</mat-option>	
-		      <mat-option value="option">Business</mat-option>
-		      <mat-option value="option">Chemistry</mat-option>	
-		      <mat-option value="option">Communications</mat-option>
+		      <mat-option *ngFor="let major of tutorService.getMajors()" [value]="major">{{ major }}</mat-option>	
 		    </mat-select>
 		  </mat-form-field>
 
 		   <mat-form-field class="col-sm">
 		    <mat-select placeholder="Grade Level Filter">
-		      <mat-option value="option">Freshman</mat-option>
-		      <mat-option value="option">Sophomore</mat-option>
-		      <mat-option value="option">Junior</mat-option>
-		      <mat-option value="option">Senior</mat-option>
-		      <mat-option value="option">Graduate</mat-option>
+		      <mat-option *ngFor="let grade of tutorService.getGradeLevels()" value="grade">{{ grade }}</mat-option>
 		    </mat-select>
 		  </mat-form-field>
 
 		   <mat-form-field class="col-sm">
 		    <mat-select placeholder="Tag Filter">
-		      <mat-option value="option">Volunteer</mat-option>
-		      <mat-option value="option">Paid</mat-option>
-		      <mat-option value="option">SARC Approved</mat-option>
-		      <mat-option value="option">Athletics Tutor</mat-option>
-		      <mat-option value="option">ROTC Tutor</mat-option>
+		      <mat-option *ngFor="let tag of tutorService.getTags()" value="tag">{{ tag }}</mat-option>
 		    </mat-select>
 		  </mat-form-field>
 		</div>
@@ -47,7 +34,7 @@
 		<mat-card class="user-card">
 			<mat-card-header>
 				<img mat-card-avatar src="{{ user.imageURL }}">	
-				<mat-card-title>{{ user.name }} <p class="rating"><i class="material-icons">{{ calculateStars(user.rating) }}</i></mat-card-title>
+				<mat-card-title>{{ user.name }} <p class="rating"><i class="material-icons">{{ tutorService.calculateStars(user.rating) }}</i></mat-card-title>
 				<mat-card-subtitle>{{ user.major }}</mat-card-subtitle>
 			</mat-card-header>
 
