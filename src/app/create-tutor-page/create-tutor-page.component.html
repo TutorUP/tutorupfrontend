@@ -44,7 +44,25 @@
 		</mat-form-field>
 	</div>
 
-	<button mat-raised-button class="submit-button">Begin Tutoring!</button>
+	<h6 class="course-heading">Course Information 
+		<i class="material-icons" (click)="addCourse()">add_circle_outline</i>
+	</h6>
 
+	<div *ngFor="let course of courses">
+		<div class="row">
+			<mat-form-field class="col-sm">
+				<mat-select placeholder="Subject Code">
+					<mat-option *ngFor="let letter of getCourseLetters()" [value]="letter">{{ letter }}</mat-option>	
+				</mat-select>
+			</mat-form-field>
+			<mat-form-field class="col-sm">
+				<mat-select placeholder="Course Number">
+					<mat-option *ngFor="let number of getCourseNumbers()" [value]="number">{{ number }}</mat-option>	
+				</mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+	
+	<button mat-raised-button class="submit-button">Begin Tutoring!</button>
 
 </div>	
