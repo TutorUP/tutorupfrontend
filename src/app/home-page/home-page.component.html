@@ -4,29 +4,29 @@
 
 
 	<div class="filters">
-	  <mat-form-field class="search">
-	    <span matPrefix class="material-icons">search &nbsp;</span>		
-	    <input type="search" matInput placeholder="Search for a Tutor...">
-	  </mat-form-field>
+		<mat-form-field class="search">
+			<span matPrefix class="material-icons">search &nbsp;</span>		
+			<input type="search" matInput placeholder="Search for a Tutor...">
+		</mat-form-field>
 
-	  <div class="row">
-		  <mat-form-field class="col-sm">
-		    <mat-select placeholder="Major Filter">
-		      <mat-option *ngFor="let major of tutorService.getMajors()" [value]="major">{{ major }}</mat-option>	
-		    </mat-select>
-		  </mat-form-field>
+		<div class="row">
+			<mat-form-field class="col-sm">
+				<mat-select placeholder="Major Filter">
+					<mat-option *ngFor="let major of tutorService.getMajors()" [value]="major">{{ major }}</mat-option>	
+				</mat-select>
+			</mat-form-field>
 
-		   <mat-form-field class="col-sm">
-		    <mat-select placeholder="Grade Level Filter">
-		      <mat-option *ngFor="let grade of tutorService.getGradeLevels()" value="grade">{{ grade }}</mat-option>
-		    </mat-select>
-		  </mat-form-field>
+			 <mat-form-field class="col-sm">
+				<mat-select placeholder="Grade Level Filter">
+					<mat-option *ngFor="let grade of tutorService.getGradeLevels()" value="grade">{{ grade }}</mat-option>
+				</mat-select>
+			</mat-form-field>
 
-		   <mat-form-field class="col-sm">
-		    <mat-select placeholder="Tag Filter">
-		      <mat-option *ngFor="let tag of tutorService.getTags()" value="tag">{{ tag }}</mat-option>
-		    </mat-select>
-		  </mat-form-field>
+			 <mat-form-field class="col-sm">
+				<mat-select placeholder="Tag Filter">
+					<mat-option *ngFor="let tag of tutorService.getTags()" value="tag">{{ tag }}</mat-option>
+				</mat-select>
+			</mat-form-field>
 		</div>
 	</div>
 

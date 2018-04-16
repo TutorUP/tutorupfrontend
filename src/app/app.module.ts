@@ -9,7 +9,9 @@ import { ResourcesPageComponent } from './resources-page/resources-page.componen
 import { HelpPageComponent } from './help-page/help-page.component';
 import { HeaderComponent } from './header/header.component';
 import { TutorService } from './tutor.service';
+import { ApiService } from './api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -109,7 +111,7 @@ import { CreateTutorPageComponent } from './create-tutor-page/create-tutor-page.
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [TutorService],
+  providers: [TutorService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class TutorService {
 
 	constructor() { }
-
+	
 	/**
 	 * calculateStars - converts number rating to string
 	 * so star icons are displayed
