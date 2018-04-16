@@ -95,4 +95,42 @@ export class TutorService {
 		];
 	}
 
+	getMinors(): string[]
+	{
+		return [
+			'Biology',
+			'Business Administration',
+			'Catholic Studies',
+			'Chemistry',
+			'Communication',
+			'Computer Science',
+			'Economics',
+			'Education',
+			'English',
+			'Entrepeneurship & Innovation Management',
+			'Environmental Policy',
+			'Environmental Science',
+			'Fine Arts',
+			'French',
+			'Gender & Woman\'s Studies',
+			'German',
+			'Global Business',
+			'Hellenic Studies',
+			'History',
+			'Mathematics',
+			'Music',
+			'Neuroscience',
+			'Philosophy',
+			'Physics',
+			'Political Science',
+			'Psychology',
+			'Social Justice',
+			'Sociology',
+			'Spanish',
+			'Sustainability',
+			'Theatre',
+			'Theology'
+		];
+	}
+
 }

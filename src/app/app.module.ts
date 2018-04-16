@@ -16,7 +16,8 @@ const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'profile', component: ProfilePageComponent },
   { path: 'help', component: HelpPageComponent },
-  { path: 'resources', component: ResourcesPageComponent }
+  { path: 'resources', component: ResourcesPageComponent },
+  { path: 'create', component:CreateTutorPageComponent }
 ];
 
 import {

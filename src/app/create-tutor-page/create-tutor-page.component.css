@@ -1,0 +1,13 @@
+.tutor-heading {
+	margin: 40px 0px 15px 0px;
+	padding: 15px 0px;
+	text-align: center;
+	border-bottom: 2px solid #1E1656;
+	color: #494949;
+	text-transform: uppercase;
+}
+
+.submit-button {
+	margin-top: 25px;
+	margin-bottom: 50px;
+}

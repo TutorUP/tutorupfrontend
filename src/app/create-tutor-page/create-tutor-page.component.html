@@ -2,4 +2,49 @@
 
 <div class="container">
 
+	<h3 class="tutor-heading">Create New Tutor Profile</h3>
+
+	<div class="row">
+		<mat-form-field class="col-sm">
+			<input matInput placeholder="Name">
+		</mat-form-field>
+
+		<mat-form-field class="col-sm">
+			<input matInput type="email" placeholder="Email Address">
+		</mat-form-field>
+	</div>
+
+	<div class="row">
+
+		<mat-form-field class="col-sm">
+			<mat-select placeholder="Major(s)" multiple>
+				<mat-option *ngFor="let major of tutorService.getMajors()" [value]="major">{{ major }}</mat-option>	
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="col-sm">
+			<mat-select placeholder="Minor(s)" multiple>
+				<mat-option *ngFor="let minor of tutorService.getMinors()" [value]="minor">{{ minor }}</mat-option>	
+			</mat-select>
+		</mat-form-field>
+
+	</div>
+
+	<div class="row">
+		<mat-form-field class="col-sm">
+  		<textarea matInput placeholder="About" matTextareaAutosize matAutosizeMinRows="1"
+            matAutosizeMaxRows="5"></textarea>
+		</mat-form-field>
+	</div>
+		
+	<div class="row">
+		<mat-form-field class="col-sm">
+  		<textarea matInput placeholder="Availability" matTextareaAutosize matAutosizeMinRows="1"
+            matAutosizeMaxRows="5"></textarea>
+		</mat-form-field>
+	</div>
+
+	<button mat-raised-button class="submit-button">Begin Tutoring!</button>
+
+
 </div>	
