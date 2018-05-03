@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class ApiService {
 
+
   private apiUrl = 'https://tutorupcapstone.herokuapp.com/api/v1/tutors';
-    tutors: any = {};
+  
+  constructor(private http:HttpClient) {}
 
-    constructor(private http: HttpClient) {
-        this.getTutors();
-        this.getData();
-    }
 
-    getData() {
+    getTutors()
+    {
         return this.http.get(this.apiUrl);
-    }
-
-    getTutors() {
-        this.getData().subscribe(data => {
-            console.log(data);
-            this.tutors = data;
-        })
     }
 
 }

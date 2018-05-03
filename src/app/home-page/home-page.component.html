@@ -30,18 +30,19 @@
 		</div>
 	</div>
 
-	<div *ngFor="let user of users">
+	<div *ngFor="let tutor of tutors">
 		<mat-card class="user-card">
 			<mat-card-header>
-				<img mat-card-avatar src="{{ user.imageURL }}">	
-				<mat-card-title>{{ user.name }} <p class="rating"><i class="material-icons">{{ tutorService.calculateStars(user.rating) }}</i></mat-card-title>
-				<mat-card-subtitle>{{ user.major }}</mat-card-subtitle>
+				<img mat-card-avatar> <!-- src="{{ user.imageURL }}"> -->	
+				<mat-card-title>{{ tutor.name }} <p class="rating"><!-- <i class="material-icons">{{ tutorService.calculateStars(user.rating) }}</i> --></mat-card-title>
+				<mat-card-subtitle>{{ tutor.subject }}</mat-card-subtitle>
+				<mat-card-subtitle>{{ tutor.email }}</mat-card-subtitle>
 			</mat-card-header>
 
 			<mat-card-content>
 				<mat-divider></mat-divider>
 
-				<mat-list>
+				<!-- <mat-list>
 					<mat-list-item>
 						<i mat-list-icon class="material-icons">local_offer</i>
 						<h4 mat-line>{{ returnList(user.tags) }}</h4>
@@ -54,7 +55,7 @@
 						<i mat-list-icon class="material-icons">event_available</i>
 						<h4 mat-line>{{ user.availability }}</h4>
 					</mat-list-item>
-				</mat-list>
+				</mat-list> -->
 			</mat-card-content>
 
 			<mat-card-actions>	

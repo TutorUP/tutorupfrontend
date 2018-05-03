@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { TutorService } from '../tutor.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,6 +11,7 @@ import { TutorService } from '../tutor.service';
 export class HomePageComponent implements OnInit {
 
 	tutorService: TutorService = new TutorService();
+  tutors: any;
 
 	users: User[] = [];
 
@@ -29,13 +31,15 @@ export class HomePageComponent implements OnInit {
 		'I am an electrifying tutor.', 'Saturdays 12:00-4:00pm', ['Athletics Tutor', 'Paid'], 5,
 		'https://vignette.wikia.nocookie.net/youtubepoop/images/f/f7/5Pikachu.png/revision/latest?cb=20141108062013');
 
-  constructor() { }
+  constructor(private _api: ApiService) { }
 
   ngOnInit() {
   	this.users.push(this.user1);
   	this.users.push(this.user2);
   	this.users.push(this.user3);
   	this.users.push(this.user4);
+
+    this.getTutors();
   }
 
   /**
@@ -47,6 +51,14 @@ export class HomePageComponent implements OnInit {
   returnList(list: string[]): string
   {
   	return list.join(', ');
+  }
+
+  getTutors()
+  {
+    this._api.getTutors().subscribe(
+      data => { this.tutors = data['response']; },
+      err => console.error(err)
+      );
   }
 
 }

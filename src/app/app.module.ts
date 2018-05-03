@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { TutorService } from './tutor.service';
 import { ApiService } from './api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -106,6 +106,7 @@ import { CreateTutorPageComponent } from './create-tutor-page/create-tutor-page.
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
